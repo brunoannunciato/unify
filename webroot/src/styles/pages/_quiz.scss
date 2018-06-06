@@ -1,0 +1,100 @@
+body.quiz {
+    background: #efefff;
+
+    .header-background {
+        background: url('../img/quiz-background.png') no-repeat;
+        background-size: cover;
+        height: 200px;
+        position: fixed;
+        left: 0;
+        width: 100%;
+        box-shadow: 0px 5px 23px 0px rgba(241,209,102,1);
+    }
+
+    .question-num {
+        font-size: .75em;
+        text-align: center;
+        text-transform: uppercase;
+        width: 100%;
+        letter-spacing: 2px;
+    }
+
+    .question-ask {
+        align-items: center;
+        font-size: 1em;
+        justify-content: center;
+        letter-spacing: 2px;
+        line-height: 20px;
+        height: 120px;
+        display: flex;
+        width: 100%;
+    }
+    .asks-container {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        border-radius: 10px;
+        margin-top: -20px;
+        
+        .ask-button {
+            background: #fff;
+            border: 1px solid #efefef;
+            box-sizing: border-box;
+            border-radius: 35px;
+            color: #999999;
+            padding: 20px 0;
+            width: 80%;
+            margin: 10px auto;
+
+            &:first-child {
+                margin-top: 20px;
+            }
+        }
+
+        .timer-wrapper {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            figure {
+                margin: 30px 2%;
+            }
+
+            .timer-bar {
+                background: #f0ebe6;
+                border-radius: 10px;
+                height: 15px;
+                width: 67%;
+                overflow: hidden;
+            }
+
+            .actived {
+                position: relative;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    animation: a-timer-bar 60s linear infinite;
+                    background: #f6bc9f;
+                    height: 100%;
+                    border-radius: 10px;
+                }
+            }
+
+            @keyframes a-timer-bar{
+                0% { width: 0%; }
+                50% { width: 100%; }
+            }
+        }
+    }
+
+    .controllers {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 3%;
+    }
+}

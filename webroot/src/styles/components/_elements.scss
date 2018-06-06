@@ -1,0 +1,64 @@
+.container {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+}
+
+.text-grey { color: #999999; }
+.text-dark-grey { color: #444; }
+.text-black { color: #1e1e1e; }
+.text-orange { color: $first-color; }
+.text-white { color: #fff; }
+
+.text-bold {font-weight: 900; }
+.text-thin { font-weight: 100; }
+.text-regular { font-weight: 400; }
+
+.title {
+    color: #1e1e1e;
+    font-size: 1.930em;
+    margin: 3px 0;
+}
+
+.subtitle {
+    color: #999;
+    font-size: 1.175em;
+    margin: 3px 0;
+}
+
+.section-title {
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+.text-field {
+    border: none;
+    background: #fff;
+    box-shadow: 0px 3px 11px -5px rgba(0,0,0,0.9);
+    padding: 15px;
+    width: 100%;
+    border-radius: 15px;
+    margin: 10px auto;
+    outline: none;
+}
+
+.button {
+    color: #fff;
+    background: linear-gradient(to right, rgba(255,182,182,1) 0%,rgba(239,150,37,1) 100%);
+    text-transform: uppercase;
+    padding: 15px 25px;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0px 5px 34px -5px rgba(243,149,87,1);
+    letter-spacing: 5px;
+}
+
+.inverse-button {
+    background: transparent;
+    border: 1px solid #ef767a;
+    color: #ef767a;
+    text-transform: uppercase;
+    padding: 15px 25px;
+    border-radius: 25px;
+    letter-spacing: 5px;
+}

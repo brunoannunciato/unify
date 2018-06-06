@@ -1,0 +1,115 @@
+body.student-profile {
+    background: #fefefe;
+
+    .background-color {
+        background: $second-h-gradient;
+        height: 250px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+    }
+
+    section.header {
+        display: flex;
+        justify-content: flex-end;
+        margin: 3vh 0;
+
+        img {
+            height: 20px;
+            width: 20px;
+            filter: invert(1);
+        }
+    }
+
+    .student-info {
+        align-items: center;
+        background: #ffffff;
+        border-radius: 30px;
+        box-shadow: 0px 1px 15px 0px rgba(0,0,0,0.53);
+        display: flex;
+        flex-direction: column;
+        margin-top: 75px;
+        padding-top: 75px;
+        position: relative;
+
+        .photo-wrapper  {
+            align-items: center;
+            border-radius: 100%;
+            display: flex;
+            height: 150px;
+            justify-content: center;
+            left: calc(50% - 110px);
+            top: -90px;
+            position: absolute;
+            overflow: hidden;
+            width: 150px;
+            
+            img {
+                width: 120%;
+                height: auto;
+            }
+        }
+
+        .student-name, .student-school {
+            font-weight: bold;
+            margin: 7px auto;
+        }
+
+        .student-name {
+            margin-top: 20px;
+            
+            &:before {
+                background: url('../img/icons/ico-alunos.png') no-repeat;
+                content: '';
+                display: inline-block;
+                height: 16px;
+                transform: translateY(2px);
+                width: 14px;
+            }
+        }
+
+        .student-school {
+            margin-bottom: 25px;
+
+            &:before {
+                background: url('../img/icons/ico-escola.png') no-repeat;
+                content: '';
+                display: inline-block;
+                height: 13px;
+                transform: translateY(2px);
+                width: 22px;
+            }
+        }
+    }
+    
+    .shelf-trophins {
+        .shelf-title {
+            margin: 25px auto;
+            text-align: center;
+        }
+
+        .shelf {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            &:after {
+                content: '';
+                flex: auto;
+            }
+
+            .trophien {
+                border-radius: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0px 1px 15px 0px rgba(0,0,0,0.53);
+                width: 80px;
+                height: 80px;
+                margin: 15px;
+            }
+        }
+    }
+}

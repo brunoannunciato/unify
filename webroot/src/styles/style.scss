@@ -1,0 +1,18 @@
+// BASE
+@import 'base/resets';
+@import 'base/config';
+
+// HELPERS
+
+@import 'helpers/variables';
+
+// COMPONENTS
+@import 'components/elements';
+
+// PAGES
+@import 'pages/universal';
+@import 'pages/home';
+@import 'pages/cadastro';
+@import 'pages/dashboard';
+@import 'pages/quiz';
+@import 'pages/student-profile';

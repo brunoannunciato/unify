@@ -1,0 +1,22 @@
+header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 3vh 0;
+
+    .logo {
+        height: 40px;
+        width: 40px;
+    }
+
+    .close-button {
+        height: 20px;
+        width: 20px;
+        outline: none;
+        user-select: none;
+
+        &::selection {
+            background: none;
+        }
+    }
+}
