@@ -8,16 +8,16 @@
 
     <?= $this->Flash->render() ?>
 
-    <section class="welcome"><form action="cadastro.php" class="register-form">
-            <input type="text"  placeholder="Nome completo" name="nome" class="text-field">
-            <select placeholder="Escola" name="escola" class="text-field">
-                <option value="Escola" disabled selected>Escola</option>
-                <option value="Colégio Módulo">Colégio Módulo</option>
-            </select>
-            <input type="text" placeholder="Usuário" name="usuario" class="text-field">
-            <input type="text" placeholder="E-mail" name="email" class="text-field">
-            <input type="password" placeholder="Senha" name="senha" class="text-field">
-            <input type="submit" class="button register-button" value="Cadastrar">
-        </form>
+    <section class="welcome">
+        <?= $this->Form->create($user, ['class' => 'register-form']) ?>
+            <?php
+            echo $this->Form->control('school_id', ['class' => 'text-field' , 'options' => $schools]);
+            echo $this->Form->control('name', ['class' => 'text-field', 'label' => false, 'placeholder' => 'Name']);
+            echo $this->Form->control('username', ['class' => 'text-field', 'label' => false, 'placeholder' => 'Username']);
+            echo $this->Form->control('email', ['class' => 'text-field', 'label' => false, 'placeholder' => 'Email']);
+            echo $this->Form->control('password', ['class' => 'text-field', 'label' => false, 'placeholder' => 'Password']);
+            ?>
+        <?= $this->Form->button(__('Submit'), ['class' => 'button register-button']) ?>
+        <?= $this->Form->end() ?>
     </section>
 </div>
