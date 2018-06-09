@@ -31,7 +31,7 @@
                         </p>
                     </div>
                     <p class="school-position text-white">
-                        <?= $key+1 ?>
+                        #<?= $key+1 ?>
                     </p>
                 </div>
                 <br>

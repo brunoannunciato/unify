@@ -28,19 +28,38 @@
 
         <div class="shelf">
             <div class="trophien">
-                <img src="<?='/dist/img/icons/trofeu-01.png'?>" alt="Primeiro troféu">
+                <img src="<?='/dist/img/trofeus/icon-trofeu-01.png'?>" alt="Melhor pontuador da escola.">
+                <p class="trophien-desc">Melhor pontuador da escola</p>
             </div>
 
             <div class="trophien">
-                <img src="<?='/dist/img/icons/trofeu-01.png'?>" alt="Primeiro troféu">
+                <img src="<?='/dist/img/trofeus/icon-trofeu-02.png'?>" alt="Gabaritou o Quiz">
+                <p class="trophien-desc">Gabaritou o Quiz</p>
             </div>
 
             <div class="trophien">
-                <img src="<?='/dist/img/icons/trofeu-01.png'?>" alt="Primeiro troféu">
+                <img src="<?='/dist/img/trofeus/icon-trofeu-03.png'?>" alt="10 acertos totais">
+                <p class="trophien-desc">10 acertos totais</p>
             </div>
 
             <div class="trophien">
-                <img src="<?='/dist/img/icons/trofeu-01.png'?>" alt="Primeiro troféu">
+                <img src="<?='/dist/img/trofeus/icon-trofeu-04.png'?>" alt="20 acertos totais">
+                <p class="trophien-desc">20 acertos totais</p>
+            </div>
+
+            <div class="trophien">
+                <img src="<?='/dist/img/trofeus/icon-trofeu-05.png'?>" alt="50 acertos totais">
+                <p class="trophien-desc">50 acertos totais</p>
+            </div>
+
+            <div class="trophien">
+                <img src="<?='/dist/img/trofeus/icon-trofeu-06.png'?>" alt="Campeão pela escola">
+                <p class="trophien-desc">Campeão pela escola</p>
+            </div>
+
+            <div class="trophien">
+                <img src="<?='/dist/img/trofeus/icon-trofeu-07.png'?>" alt="Destaque da escola">
+                <p class="trophien-desc">Destaque da escola</p>
             </div>
         </div>
     </section>

@@ -101,14 +101,31 @@ body.student-profile {
             }
 
             .trophien {
+                flex-direction: column;
+                opacity: .3;
                 border-radius: 10px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 box-shadow: 0px 1px 15px 0px rgba(0,0,0,0.53);
                 width: 80px;
-                height: 80px;
+                height: 95px;
+                padding: 3px;
                 margin: 15px;
+
+                &.active {
+                    opacity: 1;
+                }
+
+                .trophien-desc {
+                    font-size: .6em;
+                    text-align: center;
+                    margin: 2px 0;
+                }
+
+                img {
+                    width: 55%;
+                }
             }
         }
     }

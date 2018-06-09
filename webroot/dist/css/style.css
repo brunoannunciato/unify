@@ -507,9 +507,11 @@ body.dashboard .school-rank .school {
     font-weight: 100; }
 
 body.dashboard .students-rank {
-  margin-top: 10vh; }
+  margin-top: 3vh; }
   body.dashboard .students-rank .rank {
     padding: 0; }
+    body.dashboard .students-rank .rank a {
+      width: 90%; }
   body.dashboard .students-rank .student {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -544,6 +546,7 @@ body.dashboard .students-rank {
     body.dashboard .students-rank .student .datas {
       width: 60%; }
       body.dashboard .students-rank .student .datas .name, body.dashboard .students-rank .student .datas .school {
+        display: block;
         margin: 0; }
       body.dashboard .students-rank .student .datas .school {
         font-size: .75em; }
@@ -552,6 +555,7 @@ body.dashboard .students-rank {
       font-weight: 900; }
 
 body.dashboard .cta {
+  margin-bottom: 3vh;
   text-align: center; }
 
 body.quiz {
@@ -765,6 +769,11 @@ body.student-profile {
           -ms-flex: auto;
               flex: auto; }
     body.student-profile .shelf-trophins .shelf .trophien {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      opacity: .3;
       border-radius: 10px;
       display: -webkit-box;
       display: -ms-flexbox;
@@ -778,7 +787,16 @@ body.student-profile {
       -webkit-box-shadow: 0px 1px 15px 0px rgba(0, 0, 0, 0.53);
               box-shadow: 0px 1px 15px 0px rgba(0, 0, 0, 0.53);
       width: 80px;
-      height: 80px;
+      height: 95px;
+      padding: 3px;
       margin: 15px; }
+      body.student-profile .shelf-trophins .shelf .trophien.active {
+        opacity: 1; }
+      body.student-profile .shelf-trophins .shelf .trophien .trophien-desc {
+        font-size: .6em;
+        text-align: center;
+        margin: 2px 0; }
+      body.student-profile .shelf-trophins .shelf .trophien img {
+        width: 55%; }
 
 /*# sourceMappingURL=style.css.map */

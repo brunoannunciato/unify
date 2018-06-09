@@ -46,9 +46,15 @@ body.dashboard {
     }
 
     .students-rank {
-        margin-top:10vh;
+        margin-top:3vh;
 
-        .rank { padding: 0;}
+        .rank {
+            padding: 0;
+
+            a {
+                width: 90%;
+            }
+        }
 
         .student {
             display: flex;
@@ -77,6 +83,7 @@ body.dashboard {
                 width: 60%;
 
                 .name, .school {
+                    display: block;
                     margin: 0;
                 }
 
@@ -92,5 +99,8 @@ body.dashboard {
         }
     }
 
-    .cta { text-align: center; }
+    .cta {
+        margin-bottom: 3vh;
+        text-align: center;
+    }
 }
