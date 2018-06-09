@@ -24,7 +24,7 @@ class WebsiteController extends AppController
 
                 return $this->redirect(['action' => 'login']);
             }
-            $this->Flash->error(__('Unable to add the user.'));
+            $this->Flash->error(__('Não foi possível adicionar o usuário.'));
         }
 
         $schools = $this->Users->Schools->find('list', ['limit' => 200]);

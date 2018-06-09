@@ -392,6 +392,20 @@ p {
   border-radius: 25px;
   letter-spacing: 5px; }
 
+.error-message {
+  color: #ef767a;
+  margin-left: 5%; }
+
+.message {
+  border-radius: 10px;
+  color: #fff;
+  padding: 3px;
+  text-align: center; }
+  .message.error {
+    background: #ef767a; }
+  .message.success {
+    background: #5aed71; }
+
 header {
   -webkit-box-align: center;
       -ms-flex-align: center;
