@@ -4,30 +4,39 @@
 
     <section class="greeting">
         <h1 class="title">
-            Olá, <?='Bruno'?>!
+            Olá, <?= $user['name'] ?>!
         </h1>
     </section>
+
     <section class="school-rank">
         <h2 class="section-title">
             Melhores Escolas
         </h2>
-
-        <div class="school">
-            <div class="school-logo-wrapper">
-                <img src="<?='/dist/img/escola-logo.jpg'?>" alt="Logo da escola">
-            </div>
-            <div class="datas">
-                <p class="text-white school-name">
-                    <?='Colégio Módulo'?>
-                </p>
-                <p class="text-white text-thin school-points">
-                    <?='1500'?>pts
-                </p>
-            </div>
-            <p class="school-position text-white">
-                #1
-            </p>
-        </div>
+        <?php if (!empty($schools)): ?>
+            <?php foreach ($schools as $key => $school): ?>
+                <div class="school">
+                    <div class="school-logo-wrapper">
+                        <?php if ($school['image']): ?>
+                            <img src="<?= $school['image'] ?>" alt="Foto do estudante">
+                        <?php else: ?>
+                            <img src="<?='/dist/img/escola-logo.jpg'?>" alt="Logo da escola">
+                        <?php endif ?>
+                    </div>
+                    <div class="datas">
+                        <p class="text-white school-name">
+                            <?= $school['name'] ?>
+                        </p>
+                        <p class="text-white text-thin school-points">
+                            <?= 0 ?> pts
+                        </p>
+                    </div>
+                    <p class="school-position text-white">
+                        <?= $key+1 ?>
+                    </p>
+                </div>
+                <br>
+            <?php endforeach ?>
+        <?php endif ?>
     </section>
 
     <section class="students-rank">
@@ -35,29 +44,37 @@
             Melhores Alunos
         </h2>
         <ol class="rank">
+            <?php foreach ($users as $key => $user): ?>
             <a href="/website/profile">
                 <li class="student">
                     <p class="position">
-                        1
+                        <?= ++$key ?>
                     </p>
                     <div class="stutend-img-wrapper">
-                        <img src="<?='/dist/img/lorem-person.png'?>" alt="Foto do estudante">
+                        <?php if ($user['image']): ?>
+                            <img src="<?= $user['image'] ?>" alt="Foto do estudante">
+                        <?php else: ?>
+                            <img src="<?='/dist/img/lorem-person.png'?>" alt="Foto do estudante">
+                        <?php endif ?>
                     </div>
                     <div class="datas">
                         <p class="name">
-                            <?='Vinicius Felippe'?>
+                            <?= $user['name'] ?>
                         </p>
                         <p class="school">
-                            <?='Instituto Bradesco'?>
+                            <?= 'school name' ?>
                         </p>
                     </div>
                     <p class="points">
-                        <?='850'?>pts
+                        <?= 0 ?> pts
                     </p>
                 </li>
             </a>
+            <br>
+            <?php endforeach ?>
         </ol>
     </section>
+
     <section class="cta">
         <a href="/website/quiz" class="button">Participe do Quiz</a>
     </section>

@@ -11,11 +11,16 @@
                 Faça o login para continuar.
             </p>
         </div>
-        <form action="login.php" class="login-form">
-            <input type="text" placeholder="Usuário" class="text-field">
-            <input type="password" placeholder="Senha" class="text-field">
-            <input type="submit" class="button login-button" value="ENTRAR">
-        </form>
+
+        <?= $this->Flash->render() ?>
+
+        <?= $this->Form->create('', ['class' => 'login-form']) ?>
+            <?php
+            echo $this->Form->control('username', ['class' => 'text-field', 'label' => false, 'placeholder' => 'Username']);
+            echo $this->Form->control('password', ['class' => 'text-field', 'label' => false, 'placeholder' => 'Password']);
+            ?>
+        <?= $this->Form->button(__('Submit'), ['class' => 'button login-button']) ?>
+        <?= $this->Form->end() ?>
 
         <div class="functions">
             <a href="#" class="text-orange text-bold">Esqueceu sua senha?</a> <br>

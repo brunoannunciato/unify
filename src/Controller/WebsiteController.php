@@ -9,6 +9,7 @@ class WebsiteController extends AppController
     public function initialize()
     {
         parent::initialize();
+        // $this->Auth->allow(['logout']); // Allow only logout
         $this->loadModel('Users');
     }
 
@@ -21,7 +22,7 @@ class WebsiteController extends AppController
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
 
-                return $this->redirect(['action' => 'register']);
+                return $this->redirect(['action' => 'login']);
             }
             $this->Flash->error(__('Unable to add the user.'));
         }
@@ -35,10 +36,28 @@ class WebsiteController extends AppController
 
     public function login()
     {
+        if ($this->request->is('post')) {
+            $user = $this->Auth->identify();
+            if ($user) {
+                $this->Auth->setUser($user);
 
+                return $this->redirect($this->Auth->redirectUrl());
+            }
+            $this->Flash->error('Your username or password is incorrect.');
+        }
         $this->set('class', 'home');
 
+    }
 
+  /**
+     * logout Logout
+     * @return \Cake\Http\Response|null
+     */
+    public function logout()
+    {
+        $this->Flash->success('You are now logged out.');
+
+        return $this->redirect($this->Auth->logout());
     }
 
     public function profile()
@@ -48,6 +67,10 @@ class WebsiteController extends AppController
 
     public function dashboard()
     {
+        $schools = $this->Users->Schools->find()->limit(3); // TODO: fix the query
+        $users = $this->Users->find(); // TODO: fix the query
+
+        $this->set(compact('schools', 'users'));
         $this->set('class', 'dashboard');
     }
 

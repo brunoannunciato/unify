@@ -41,16 +41,76 @@ class AppController extends Controller
     {
         parent::initialize();
 
-        $this->loadComponent('RequestHandler', [
-            'enableBeforeRedirect' => false,
-        ]);
+        $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
 
-        /*
-         * Enable the following components for recommended CakePHP security settings.
-         * see https://book.cakephp.org/3.0/en/controllers/components/security.html
-         */
-        //$this->loadComponent('Security');
-        //$this->loadComponent('Csrf');
+        // Load component Auth
+        $this->loadComponent('Auth', [
+            'authenticate' => [
+                'Form' => [
+                    'fields' => ['username' => 'username', 'password' => 'password']
+                ]
+            ],
+            'loginAction' => [
+                'controller' => 'Website',
+                'action' => 'login',
+                'prefix' => false,
+            ],
+            'loginRedirect' => [
+                'controller' => 'Website',
+                'action' => 'dashboard',
+                'prefix' => false
+            ],
+            // If unauthorized, return them to page they were just on "$this->referer()"
+            'unauthorizedRedirect' => false,
+        ]);
+
+        // Allow the display action so our PagesController
+        // continues to work. Also enable the read only actions.
+        $this->Auth->allow(['login', 'logout', 'register']);
+
+        // Change layout when prefix is dashboard
+        if (isset($this->request->params['prefix']) && $this->request->params['prefix'] == 'dashboard') {
+            // $this->viewBuilder()->setLayout('dashboard');
+        }
+    }
+
+    /**
+     * beforeFilter Before filter
+     * @param  Event  $event
+     * @return void
+     */
+    public function beforeFilter(Event $event)
+    {
+        if (isset($this->request->params['prefix']) && $this->request->params['prefix'] !== 'dashboard') {
+            $this->Auth->allow();
+        } else {
+            // $this->Auth->deny();
+        }
+    }
+
+    /**
+     * beforeRender Before render
+     * @param  Event  $event
+     * @return void
+     */
+    public function beforeRender(Event $event) {
+        if ($user = $this->Auth->user()) {
+            $this->set(compact('user'));
+        }
+    }
+
+    /**
+     * isAuthorized Is authorized
+     * @param  array  $user
+     * @return boolean
+     */
+    public function isAuthorized($user = null)
+    {
+        if(!empty($user)){
+            return true;
+        }
+
+        return false;
     }
 }
