@@ -1,4 +1,15 @@
 body.dashboard {
+    header {
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .logout {
+                color: $second-color;
+            }
+        }
+    }
     .school-rank {
         .school {
             background: $third-h-gradient;

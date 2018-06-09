@@ -457,6 +457,19 @@ body.cadastro .select {
   background: #fff;
   color: #999; }
 
+body.dashboard header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  body.dashboard header .container .logout {
+    color: #ef767a; }
+
 body.dashboard .school-rank .school {
   background: -webkit-gradient(linear, left top, right top, from(#829df6), to(#4b6bec));
   background: linear-gradient(to right, #829df6 0%, #4b6bec 100%);

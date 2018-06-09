@@ -1,4 +1,12 @@
-<?= $this->element('Custom/header') ?>
+<header>
+    <div class="container">
+        <img src="/dist/img/logo-min-colorido.png" alt="Unify" class="logo">
+        <a href="/website/logout" title="Sair" class="logout">
+            Sair
+        </a>
+    </div>
+</header>
+
 
 <div class="container">
 
