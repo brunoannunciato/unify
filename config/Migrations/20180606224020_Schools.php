@@ -26,7 +26,7 @@ class Schools extends AbstractMigration
         $table->addColumn('image', 'string', [
             'default' => null,
             'limit' => 255,
-            'null' => false,
+            'null' => true,
         ]);
         $table->create();
     }
