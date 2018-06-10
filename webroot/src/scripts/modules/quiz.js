@@ -33,4 +33,13 @@ module.exports = function () {
         }
       }, 500)
 
+      $('.quiz-container').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        console.log("estamos no", nextSlide);
+        
+        if (nextSlide == 9) {
+          $('.slick-jump, .slick-next').addClass('hide');
+          $('.send-button').addClass('show');
+        }
+      });
+
 }

@@ -1,8 +1,10 @@
 body.quiz {
     background: #efefff;
 
+    * { outline: none; }
+
     .header-background {
-        background: url('../img/quiz-background.png') no-repeat;
+        background:  #5a76e6 url('../img/quiz-background.png') no-repeat;
         background-size: cover;
         height: 200px;
         position: fixed;
@@ -39,17 +41,37 @@ body.quiz {
         margin-top: -20px;
         
         .ask-button {
+            align-items: center;
             background: #fff;
             border: 1px solid #efefef;
             box-sizing: border-box;
             border-radius: 35px;
             color: #999999;
+            display: flex;
+            justify-content: center;
             padding: 20px 0;
             width: 80%;
             margin: 10px auto;
 
             &:first-child {
                 margin-top: 20px;
+            }
+
+            .ask-radio {
+                position: absolute;
+                opacity: 0;
+
+                label {
+                    text-align: center;
+                    width: 100%;
+                }
+                
+                &:checked + label {
+                    color: #5aed71;
+                    font-weight: bolder;
+                    transform: scale(1.1);
+                    transition: all ease .3s;
+                }
             }
         }
 
