@@ -115,6 +115,7 @@ body.student-profile {
 
                 &.active {
                     opacity: 1;
+                    order: -1;
                 }
 
                 .trophien-desc {

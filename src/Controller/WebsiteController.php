@@ -78,4 +78,9 @@ class WebsiteController extends AppController
     {
         $this->set('class', 'quiz');
     }
+
+    public function result()
+    {
+        $this->set('class', 'result');
+    }
 }

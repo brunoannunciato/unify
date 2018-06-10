@@ -54,7 +54,7 @@
 
             <div class="trophien">
                 <img src="<?='/dist/img/trofeus/icon-trofeu-06.png'?>" alt="Campeão pela escola">
-                <p class="trophien-desc">Campeão pela escola</p>
+                <p class="trophien-desc">Jogou pela escola campeã</p>
             </div>
 
             <div class="trophien">

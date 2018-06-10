@@ -576,6 +576,25 @@ body.dashboard .students-rank {
 body.dashboard .cta {
   margin-bottom: 3vh;
   text-align: center; }
+  body.dashboard .cta .button {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-size: 1em;
+    padding: 5px 25px; }
+    body.dashboard .cta .button:before {
+      content: '';
+      background: url("../img/icons/ico-play.png") no-repeat;
+      display: inline-block;
+      height: 54px;
+      margin: 5px 22px 0 -25px;
+      width: 50px; }
 
 body.quiz {
   background: #efefff; }
@@ -708,6 +727,8 @@ body.quiz {
     -ms-flex-pack: distribute;
         justify-content: space-around;
     margin-top: 3%; }
+    body.quiz .controllers .send-button {
+      width: 100%; }
 
 body.student-profile {
   background: #fefefe; }
@@ -834,12 +855,129 @@ body.student-profile {
       padding: 3px;
       margin: 15px; }
       body.student-profile .shelf-trophins .shelf .trophien.active {
-        opacity: 1; }
+        opacity: 1;
+        -webkit-box-ordinal-group: 0;
+            -ms-flex-order: -1;
+                order: -1; }
       body.student-profile .shelf-trophins .shelf .trophien .trophien-desc {
         font-size: .6em;
         text-align: center;
         margin: 2px 0; }
       body.student-profile .shelf-trophins .shelf .trophien img {
         width: 55%; }
+
+body.result {
+  background: #efefff; }
+  body.result * {
+    outline: none; }
+  body.result div.header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    margin: 3vh 0; }
+    body.result div.header img {
+      height: 20px;
+      width: 20px;
+      -webkit-filter: invert(1);
+              filter: invert(1); }
+  body.result .header-background {
+    background: #5a76e6 url("../img/quiz-background.png") no-repeat;
+    background-size: cover;
+    height: 200px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: -1; }
+  body.result .congratulations {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: -35px; }
+    body.result .congratulations .title {
+      color: #fff !important; }
+  body.result .points-wrapper {
+    background: #fff;
+    border-radius: 10px;
+    margin-top: 5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 20px 0;
+    -webkit-box-shadow: 0px 1px 15px 0px rgba(0, 0, 0, 0.53);
+            box-shadow: 0px 1px 15px 0px rgba(0, 0, 0, 0.53); }
+    body.result .points-wrapper .points {
+      font-size: 3em;
+      margin: 3px; }
+    body.result .points-wrapper .points-string {
+      color: #707070; }
+  body.result .trophies {
+    margin-top: 5vh; }
+    body.result .trophies .shelf {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+      body.result .trophies .shelf:after {
+        content: '';
+        -webkit-box-flex: 1;
+            -ms-flex: auto;
+                flex: auto; }
+      body.result .trophies .shelf .trophien {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        display: none;
+        border-radius: 10px;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-shadow: 0px 1px 15px 0px rgba(0, 0, 0, 0.53);
+                box-shadow: 0px 1px 15px 0px rgba(0, 0, 0, 0.53);
+        width: 80px;
+        height: 95px;
+        padding: 3px;
+        margin: 15px; }
+        body.result .trophies .shelf .trophien.active {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex; }
+        body.result .trophies .shelf .trophien .trophien-desc {
+          font-size: .6em;
+          text-align: center;
+          margin: 2px 0; }
+        body.result .trophies .shelf .trophien img {
+          width: 55%; }
 
 /*# sourceMappingURL=style.css.map */

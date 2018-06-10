@@ -1,7 +1,7 @@
 <div class="header-background"></div>
 <div class="container">
 
-    <form action="#">
+    <form action="/website/result">
         <section class="quiz-container">
 
             <div class="question">
@@ -526,13 +526,13 @@
 
         </section>
 
+        <div class="controllers">
+            <button type="button" class="slick-jump inverse-button">Pular</button>
+            <button type="button" class="slick-next button">Próxima</button>
+            <input type="submit" value="Terminar" class="button hide send-button">
+        </div>
     </form>
 
-    <div class="controllers">
-        <button type="button" class="slick-jump inverse-button">Pular</button>
-        <button type="button" class="slick-next button">Próxima</button>
-        <input type="submit" value="Terminar" class="button hide send-button">
-    </div>
 </div>
 
 

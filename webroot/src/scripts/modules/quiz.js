@@ -39,6 +39,11 @@ module.exports = function () {
         if (nextSlide == 9) {
           $('.slick-jump, .slick-next').addClass('hide');
           $('.send-button').addClass('show');
+          
+          setTimeout(function() {
+            $('.send-button').click();
+          }, 30000) 
+        
         }
       });
 
