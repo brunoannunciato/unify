@@ -13,11 +13,11 @@
         </figure>
 
         <p class="student-name">
-            <?='Bruno Dinamarco Tóroro'?>
+            <?= $profile['name'] ?>
         </p>
 
         <p class="student-school">
-            <?='Pueri Domus'?>
+            <?= $school['name'] ?>
         </p>
     </section>
 

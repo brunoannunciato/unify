@@ -9,18 +9,19 @@ class WebsiteController extends AppController
     public function initialize()
     {
         parent::initialize();
-        // $this->Auth->allow(['logout']); // Allow only logout
         $this->loadModel('Users');
+        $this->loadModel('Schools');
+        $this->loadModel('Answers');
+        $this->loadModel('Questions');
     }
 
     public function register()
     {
-
         $user = $this->Users->newEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
-                $this->Flash->success(__('The user has been saved.'));
+                $this->Flash->success(__('Conta criada com sucesso.'));
 
                 return $this->redirect(['action' => 'login']);
             }
@@ -43,10 +44,9 @@ class WebsiteController extends AppController
 
                 return $this->redirect($this->Auth->redirectUrl());
             }
-            $this->Flash->error('Your username or password is incorrect.');
+            $this->Flash->error('Usuário ou senha incorretos.');
         }
         $this->set('class', 'home');
-
     }
 
   /**
@@ -55,20 +55,24 @@ class WebsiteController extends AppController
      */
     public function logout()
     {
-        $this->Flash->success('You are now logged out.');
+        $this->Flash->success('Você está desconectado agora.');
 
         return $this->redirect($this->Auth->logout());
     }
 
-    public function profile()
+    public function profile($id = null)
     {
+        $profile = $this->Users->find()->where(['id' => $id])->first();
+        $school = $this->Schools->find()->where(['id' => $profile['school_id']])->first();
+
+        $this->set(compact('profile', 'school'));
         $this->set('class', 'student-profile');
     }
 
     public function dashboard()
     {
-        $schools = $this->Users->Schools->find()->limit(3); // TODO: fix the query
-        $users = $this->Users->find(); // TODO: fix the query
+        $schools = $this->Schools->find()->limit(3);
+        $users = $this->Users->find()->where(['id !=' => $this->Auth->user('id')])->limit(5);
 
         $this->set(compact('schools', 'users'));
         $this->set('class', 'dashboard');
@@ -76,6 +80,9 @@ class WebsiteController extends AppController
 
     public function quiz()
     {
+        $questions = $this->Questions->find('all')->contain('Answers')->limit(10);
+
+        $this->set(compact('questions'));
         $this->set('class', 'quiz');
     }
 

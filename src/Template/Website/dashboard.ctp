@@ -12,7 +12,7 @@
 
     <section class="greeting">
         <h1 class="title">
-            Olá, <?= $user['name'] ?>!
+            Olá, <?= $auth['name'] ?>!
         </h1>
     </section>
 
@@ -53,24 +53,51 @@
         </h2>
         <ol class="rank">
             <?php foreach ($users as $key => $user): ?>
-            <a href="/website/profile">
+                <a href="/website/profile/<?= $user['id'] ?>">
+                    <li class="student">
+                        <p class="position">
+                            <?= ++$key ?>
+                        </p>
+                        <div class="stutend-img-wrapper">
+                            <?php if ($user['image']): ?>
+                                <img src="<?= $user['image'] ?>" alt="Foto do estudante">
+                            <?php else: ?>
+                                <img src="<?='/dist/img/lorem-person.png'?>" alt="Foto do estudante">
+                            <?php endif ?>
+                        </div>
+                        <div class="datas">
+                            <p class="name">
+                                <?= $user['name'] ?>
+                            </p>
+                            <p class="school">
+                                <?= $user['school']['name'] ?>
+                            </p>
+                        </div>
+                        <p class="points">
+                            <?= 0 ?> pts
+                        </p>
+                    </li>
+                </a>
+                <br>
+            <?php endforeach ?>
+            <a href="/website/profile/<?= $auth['id'] ?>">
                 <li class="student">
                     <p class="position">
                         <?= ++$key ?>
                     </p>
                     <div class="stutend-img-wrapper">
-                        <?php if ($user['image']): ?>
-                            <img src="<?= $user['image'] ?>" alt="Foto do estudante">
+                        <?php if ($auth['image']): ?>
+                            <img src="<?= $auth['image'] ?>" alt="Foto do estudante">
                         <?php else: ?>
                             <img src="<?='/dist/img/lorem-person.png'?>" alt="Foto do estudante">
                         <?php endif ?>
                     </div>
                     <div class="datas">
                         <p class="name">
-                            <?= $user['name'] ?>
+                            asdad<?= $auth['name'] ?>
                         </p>
                         <p class="school">
-                            <?= 'school name' ?>
+                            <?= $auth['school']['name'] ?>
                         </p>
                     </div>
                     <p class="points">
@@ -78,8 +105,6 @@
                     </p>
                 </li>
             </a>
-            <br>
-            <?php endforeach ?>
         </ol>
     </section>
 
