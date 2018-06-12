@@ -28,7 +28,8 @@ class QuestionsSeed extends AbstractSeed
             ['title' => 'Quais as 2 religiões predominantes no Brasil?'],
             ['title' => 'Qual a segunda religião mais praticada no mundo?'],
             ['title' => 'Qual o principal motivo para a migração dos judaicos para a Palestina?'],
-            ['title' => 'Quantas pessoas Hitler matou?']
+            ['title' => 'Quantas pessoas Hitler matou?'],
+            ['title' => 'Qual religião sofre o maior número de denúncias de intolerância no Brasil?']
         ];
 
         $table = $this->table('questions');

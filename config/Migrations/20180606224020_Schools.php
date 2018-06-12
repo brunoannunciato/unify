@@ -12,7 +12,7 @@ class Schools extends AbstractMigration
      */
     public function change()
     {
-        $table = $this->table('schools');
+        $table = $this->table('schools', ['collation' => 'utf8_general_ci']);
         $table->addColumn('name', 'string', [
             'default' => null,
             'limit' => 255,

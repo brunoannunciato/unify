@@ -12,7 +12,7 @@ class Scores extends AbstractMigration
      */
     public function change()
     {
-        $table = $this->table('scores');
+        $table = $this->table('scores', ['collation' => 'utf8_general_ci']);
         $table->addColumn('user_id', 'integer')->addForeignKey('user_id', 'users', 'id');
         $table->addColumn('question_id', 'integer')->addForeignKey('question_id', 'questions', 'id');
         $table->addColumn('score', 'integer', [

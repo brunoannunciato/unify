@@ -12,7 +12,7 @@ class Trophies extends AbstractMigration
      */
     public function change()
     {
-        $table = $this->table('trophies');
+        $table = $this->table('trophies', ['collation' => 'utf8_general_ci']);
         $table->addColumn('name', 'string', [
             'default' => null,
             'limit' => 255,

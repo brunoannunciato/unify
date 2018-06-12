@@ -12,7 +12,7 @@ class Questions extends AbstractMigration
      */
     public function change()
     {
-        $table = $this->table('questions');
+        $table = $this->table('questions', ['collation' => 'utf8_general_ci']);
         $table->addColumn('title', 'string', [
             'default' => null,
             'limit' => 255,

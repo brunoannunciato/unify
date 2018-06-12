@@ -12,7 +12,7 @@ class Users extends AbstractMigration
      */
     public function change()
     {
-        $table = $this->table('users');
+        $table = $this->table('users', ['collation' => 'utf8_general_ci']);
         $table->addColumn('school_id', 'integer')->addForeignKey('school_id', 'schools', 'id');
         $table->addColumn('name', 'string', [
             'default' => null,

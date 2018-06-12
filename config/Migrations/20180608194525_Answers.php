@@ -12,7 +12,7 @@ class Answers extends AbstractMigration
      */
     public function change()
     {
-        $table = $this->table('answers');
+        $table = $this->table('answers', ['collation' => 'utf8_general_ci']);
         $table->addColumn('question_id', 'integer')->addForeignKey('question_id', 'questions', 'id');
         $table->addColumn('description', 'string', [
             'default' => null,

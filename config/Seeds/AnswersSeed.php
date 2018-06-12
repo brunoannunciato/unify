@@ -64,10 +64,10 @@ class AnswersSeed extends AbstractSeed
             ['question_id' => 9, 'description' => 'A fome no Oriente Médio', 'correct' => '1'],
             ['question_id' => 9, 'description' => 'A ascensão do nazismo', 'correct' => '0'],
 
-            ['question_id' => 10, 'description' => 'Nenhuma', 'correct' => '0'],
-            ['question_id' => 10, 'description' => 'Duas pessoas', 'correct' => '1'],
-            ['question_id' => 10, 'description' => '120 milhões', 'correct' => '0'],
-            ['question_id' => 10, 'description' => '60 milhões', 'correct' => '0'],
+            ['question_id' => 10, 'description' => 'Espírita', 'correct' => '0'],
+            ['question_id' => 10, 'description' => 'Afro-brasileira', 'correct' => '1'],
+            ['question_id' => 10, 'description' => 'Evangélica', 'correct' => '0'],
+            ['question_id' => 10, 'description' => 'Católica', 'correct' => '0']
         ];
 
         $table = $this->table('answers');

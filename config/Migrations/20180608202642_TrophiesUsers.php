@@ -12,7 +12,7 @@ class TrophiesUsers extends AbstractMigration
      */
     public function change()
     {
-        $table = $this->table('trophies_users');
+        $table = $this->table('trophies_users', ['collation' => 'utf8_general_ci']);
         $table->addColumn('user_id', 'integer')->addForeignKey('user_id', 'users', 'id');
         $table->addColumn('trophy_id', 'integer')->addForeignKey('trophy_id', 'trophies', 'id');
         $table->create();
