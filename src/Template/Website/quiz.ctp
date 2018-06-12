@@ -39,7 +39,7 @@
             <button type="button" class="slick-jump inverse-button">Pular</button>
             <button type="button" class="slick-next button">Próxima</button>
             <input type="submit" value="Terminar" class="button hide send-button">
-            <input type="hidden" name="correct-counter">
+            <input type="hidden" name="correct-counter" id="points">
         </div>
     </form>
 
