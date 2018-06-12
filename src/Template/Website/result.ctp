@@ -36,12 +36,12 @@
 
                 <div class="shelf">
 
-                    <div class="trophien">
+                    <div class="trophien <?= ($auth['score'] >= 100) ? 'active' : '' ?>">
                         <img src="<?='/dist/img/trofeus/icon-trofeu-02.png'?>" alt="Gabaritou o Quiz">
                         <p class="trophien-desc">Gabaritou o Quiz</p>
                     </div>
 
-                    <div class="trophien">
+                    <div class="trophien <?= ($auth['score'] >= 100) ? 'active' : '' ?>">
                         <img src="<?='/dist/img/trofeus/icon-trofeu-03.png'?>" alt="10 acertos totais">
                         <p class="trophien-desc">10 acertos totais</p>
                     </div>

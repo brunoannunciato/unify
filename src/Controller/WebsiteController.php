@@ -84,7 +84,7 @@ class WebsiteController extends AppController
         $schools = $connection->execute($query)->fetchAll('assoc');
 
         // $users = $this->Users->find()->where(['id !=' => $id])->contain('Schools')->limit(5);
-        $users = $this->Users->find()->where(['Users.id !=' => $id])->contain('Schools')->toArray();
+        $users = $this->Users->find()->contain('Schools')->order(['score' => 'DESC'])->limit(5)->toArray();
 
         $this->set(compact('schools', 'users'));
         $this->set('class', 'dashboard');

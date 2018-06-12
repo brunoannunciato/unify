@@ -35,7 +35,7 @@
                             <?= $school['name'] ?>
                         </p>
                         <p class="text-white text-thin school-points">
-                            <?= $school['score_total'] ?> pts
+                            <?= (!empty($school['score_total'])) ? $school['score_total'] : 0 ; ?> pts
                         </p>
                     </div>
                     <p class="school-position text-white">
@@ -70,29 +70,12 @@
                             </p>
                         </div>
                         <p class="points">
-                            <?= $user['score'] ?> pts
+                            <?= (!empty($user['score'])) ? $user['score'] : 0 ; ?> pts
                         </p>
                     </li>
                 </a>
                 <br>
             <?php endforeach ?>
-            <a href="/website/profile/<?= $auth['id'] ?>">
-                <li class="student">
-                    <p class="position">
-                        <?= ++$key ?>
-                    </p>
-                    <div class="stutend-img-wrapper">
-                        <img src="<?='/dist/img/lorem-person.png'?>" alt="Foto do estudante">
-                    </div>
-                    <div class="datas">
-                        <p class="name"><?= $auth['name'] ?></p>
-                        <p class="school"><?= $auth['school']['name'] ?></p>
-                    </div>
-                    <p class="points">
-                        <?= $auth['score'] ?> pts
-                    </p>
-                </li>
-            </a>
         </ol>
     </section>
 
