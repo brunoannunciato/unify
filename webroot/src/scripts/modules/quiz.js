@@ -47,7 +47,7 @@ module.exports = function () {
     }
   });
 
-  var rightAnswer = $('.ask-radio').attr('data-correct', '1'),
+  var rightAnswer = $('.ask-radio[data-correct=1]'),
       points = 0,
       score = $('#points');
 
