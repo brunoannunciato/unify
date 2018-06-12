@@ -588,13 +588,6 @@ body.dashboard .cta {
             justify-content: center;
     font-size: 1em;
     padding: 5px 25px; }
-    body.dashboard .cta .button:before {
-      content: '';
-      background: url("../img/icons/ico-play.png") no-repeat;
-      display: inline-block;
-      height: 54px;
-      margin: 5px 22px 0 -25px;
-      width: 50px; }
 
 body.quiz {
   background: #efefff; }
