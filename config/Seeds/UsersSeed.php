@@ -23,23 +23,37 @@ class UsersSeed extends AbstractSeed
         $data = [
             [
                 'school_id' => rand(1, 3),
-                'name'      => 'Administrator',
-                'username'  => 'admin',
-                'email'     => 'email@email',
+                'name'      => 'Roberto Cardoso',
+                'username'  => 'Roberto',
+                'email'     => 'Roberto@email',
                 'password'  => $hasher->hash(123),
             ],
             [
                 'school_id' => rand(1, 3),
                 'name'      => 'Fulano Torres',
                 'username'  => 'fulano',
-                'email'     => 'email@email',
+                'email'     => 'fulano@email',
                 'password'  => $hasher->hash(123),
             ],
             [
                 'school_id' => rand(1, 3),
                 'name'      => 'Beltrano da Silva',
                 'username'  => 'beltrano',
-                'email'     => 'email@email',
+                'email'     => 'beltrano@email',
+                'password'  => $hasher->hash(123),
+            ],
+            [
+                'school_id' => rand(1, 3),
+                'name'      => 'Julia Gomes',
+                'username'  => 'julia',
+                'email'     => 'julia@email',
+                'password'  => $hasher->hash(123),
+            ],
+            [
+                'school_id' => rand(1, 3),
+                'name'      => 'Alex Pinheiros',
+                'username'  => 'alex',
+                'email'     => 'alex@email',
                 'password'  => $hasher->hash(123),
             ]
         ];
