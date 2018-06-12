@@ -20,9 +20,7 @@
 
             <div class="points-wrapper">
                 <p class="points">
-                    <?php if (!empty($auth['score'])): ?>
-                        <?= $auth['score'] ?>
-                    <?php endif; ?>
+                    <?= (!empty($auth['score'])) ? $auth['score'] : 0 ; ?>
                 </p>
                 <div class="points-string">
                     Pontos
