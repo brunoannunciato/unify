@@ -3,16 +3,20 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\ORM\TableRegistry;
+use Cake\Datasource\ConnectionManager;
 
 class WebsiteController extends AppController
 {
     public function initialize()
     {
         parent::initialize();
+
         $this->loadModel('Users');
         $this->loadModel('Schools');
         $this->loadModel('Answers');
         $this->loadModel('Questions');
+        $this->loadModel('Scores');
     }
 
     public function register()
@@ -49,10 +53,6 @@ class WebsiteController extends AppController
         $this->set('class', 'home');
     }
 
-  /**
-     * logout Logout
-     * @return \Cake\Http\Response|null
-     */
     public function logout()
     {
         $this->Flash->success('Você está desconectado agora.');
@@ -71,8 +71,20 @@ class WebsiteController extends AppController
 
     public function dashboard()
     {
-        $schools = $this->Schools->find()->limit(3);
-        $users = $this->Users->find()->where(['id !=' => $this->Auth->user('id')])->limit(5);
+        $id = $this->Auth->user('id');
+
+        // $schools = $this->Schools->find()->limit(3);
+        $query = "SELECT schools.id, schools.name, SUM(users.score) as score_total
+        FROM schools
+        INNER JOIN users ON schools.id = users.school_id
+        GROUP BY schools.id
+        ORDER BY score_total DESC";
+
+        $connection = ConnectionManager::get('default');
+        $schools = $connection->execute($query)->fetchAll('assoc');
+
+        // $users = $this->Users->find()->where(['id !=' => $id])->contain('Schools')->limit(5);
+        $users = $this->Users->find()->where(['Users.id !=' => $id])->contain('Schools')->toArray();
 
         $this->set(compact('schools', 'users'));
         $this->set('class', 'dashboard');
@@ -80,6 +92,24 @@ class WebsiteController extends AppController
 
     public function quiz()
     {
+        if ($this->request->is('post')) {
+            // Get the score post
+            $score = $this->request->getData('score');
+
+            // Set the user data
+            $userTable = TableRegistry::get('Users');
+            $user = $userTable->newEntity();
+            $user = $userTable->get($this->Auth->user('id'));
+            $user->score = $user->score + ($score*10);
+
+            if ($userTable->save($user)) {
+                $id = $this->Auth->user('id');
+                $userData = $this->Users->find()->where(['Users.id' => $id])->contain('Schools')->first()->toArray();
+                $this->Auth->setUser($userData);
+                return $this->redirect(['action' => 'result']);
+            }
+        }
+
         $questions = $this->Questions->find('all')->contain('Answers')->limit(10);
 
         $this->set(compact('questions'));

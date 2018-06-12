@@ -35,7 +35,7 @@
                             <?= $school['name'] ?>
                         </p>
                         <p class="text-white text-thin school-points">
-                            <?= 0 ?> pts
+                            <?= $school['score_total'] ?> pts
                         </p>
                     </div>
                     <p class="school-position text-white">
@@ -70,7 +70,7 @@
                             </p>
                         </div>
                         <p class="points">
-                            <?= 0 ?> pts
+                            <?= $user['score'] ?> pts
                         </p>
                     </li>
                 </a>
@@ -89,7 +89,7 @@
                         <p class="school"><?= $auth['school']['name'] ?></p>
                     </div>
                     <p class="points">
-                        <?= 0 ?> pts
+                        <?= $auth['score'] ?> pts
                     </p>
                 </li>
             </a>

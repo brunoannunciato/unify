@@ -1,8 +1,7 @@
 <div class="header-background"></div>
 
 <div class="container">
-
-    <form action="/website/result">
+    <?= $this->Form->create() ?>
         <section class="quiz-container">
             <?php if (!empty($questions)): ?>
                 <?php foreach ($questions as $key => $question): ?>
@@ -39,10 +38,9 @@
             <button type="button" class="slick-jump inverse-button">Pular</button>
             <button type="button" class="slick-next button">Próxima</button>
             <input type="submit" value="Terminar" class="button hide send-button">
-            <input type="hidden" name="correct-counter" id="points">
+            <input type="hidden" name="score" id="points">
         </div>
-    </form>
-
+    <?= $this->Form->end() ?>
 </div>
 
 <?= $this->Html->script([

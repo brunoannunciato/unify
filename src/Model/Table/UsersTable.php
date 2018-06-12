@@ -88,6 +88,12 @@ class UsersTable extends Table
             ->requirePresence('password', 'create')
             ->notEmpty('password');
 
+        $validator
+            ->scalar('score')
+            ->maxLength('score', 255)
+            ->requirePresence('score', 'create')
+            ->notEmpty('score');
+
         return $validator;
     }
 

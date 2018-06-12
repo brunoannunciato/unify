@@ -16,7 +16,7 @@
 
         <?= $this->Form->create('', ['class' => 'login-form']) ?>
             <?php
-            echo $this->Form->control('username', ['class' => 'text-field', 'label' => false, 'placeholder' => 'Username']);
+            echo $this->Form->control('username', ['class' => 'text-field', 'label' => false, 'placeholder' => 'Username', 'autofocus']);
             echo $this->Form->control('password', ['class' => 'text-field', 'label' => false, 'placeholder' => 'Password']);
             ?>
         <?= $this->Form->button(__('Entrar'), ['class' => 'button login-button']) ?>

@@ -36,6 +36,7 @@ class User extends Entity
         'username' => true,
         'email' => true,
         'password' => true,
+        'score' => true,
         'school' => true,
         'scores' => true,
         'trophies' => true
