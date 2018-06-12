@@ -70,7 +70,7 @@ class AppController extends Controller
 
         // Allow the display action so our PagesController
         // continues to work. Also enable the read only actions.
-        $this->Auth->allow(['login', 'logout', 'register']);
+        $this->Auth->allow(['login', 'logout', 'register', 'site']);
 
         // Change layout when prefix is dashboard
         if (isset($this->request->params['prefix']) && $this->request->params['prefix'] == 'dashboard') {
