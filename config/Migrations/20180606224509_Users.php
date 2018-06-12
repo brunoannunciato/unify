@@ -37,7 +37,7 @@ class Users extends AbstractMigration
         $table->addColumn('score', 'string', [
             'default' => null,
             'limit' => 255,
-            'null' => false,
+            'null' => true,
         ]);
         $table->create();
     }
