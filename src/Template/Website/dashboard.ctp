@@ -59,11 +59,7 @@
                             <?= ++$key ?>
                         </p>
                         <div class="stutend-img-wrapper">
-                            <?php if ($user['image']): ?>
-                                <img src="<?= $user['image'] ?>" alt="Foto do estudante">
-                            <?php else: ?>
-                                <img src="<?='/dist/img/lorem-person.png'?>" alt="Foto do estudante">
-                            <?php endif ?>
+                            <img src="<?='/dist/img/lorem-person.png'?>" alt="Foto do estudante">
                         </div>
                         <div class="datas">
                             <p class="name">
@@ -86,19 +82,11 @@
                         <?= ++$key ?>
                     </p>
                     <div class="stutend-img-wrapper">
-                        <?php if ($auth['image']): ?>
-                            <img src="<?= $auth['image'] ?>" alt="Foto do estudante">
-                        <?php else: ?>
-                            <img src="<?='/dist/img/lorem-person.png'?>" alt="Foto do estudante">
-                        <?php endif ?>
+                        <img src="<?='/dist/img/lorem-person.png'?>" alt="Foto do estudante">
                     </div>
                     <div class="datas">
-                        <p class="name">
-                            asdad<?= $auth['name'] ?>
-                        </p>
-                        <p class="school">
-                            <?= $auth['school']['name'] ?>
-                        </p>
+                        <p class="name"><?= $auth['name'] ?></p>
+                        <p class="school"><?= $auth['school']['name'] ?></p>
                     </div>
                     <p class="points">
                         <?= 0 ?> pts

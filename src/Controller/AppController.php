@@ -41,6 +41,8 @@ class AppController extends Controller
     {
         parent::initialize();
 
+        $this->loadModel('Schools');
+
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
 
@@ -95,8 +97,10 @@ class AppController extends Controller
      * @return void
      */
     public function beforeRender(Event $event) {
-        if ($user = $this->Auth->user()) {
-            $this->set(compact('user'));
+        if ($auth = $this->Auth->user()) {
+            $school = $this->Schools->find()->where(['id' => $auth['school_id']])->first();
+            $auth['school'] = $school->toArray();
+            $this->set(compact('auth'));
         }
     }
 
