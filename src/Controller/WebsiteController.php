@@ -120,4 +120,9 @@ class WebsiteController extends AppController
     {
         $this->set('class', 'result');
     }
+
+    public function site()
+    {
+        $this->viewBuilder()->setLayout('site');
+    }
 }
