@@ -19,7 +19,7 @@
             echo $this->Form->control('username', ['class' => 'text-field', 'label' => false, 'placeholder' => 'Username']);
             echo $this->Form->control('password', ['class' => 'text-field', 'label' => false, 'placeholder' => 'Password']);
             ?>
-        <?= $this->Form->button(__('Submit'), ['class' => 'button login-button']) ?>
+        <?= $this->Form->button(__('Entrar'), ['class' => 'button login-button']) ?>
         <?= $this->Form->end() ?>
 
         <div class="functions">
